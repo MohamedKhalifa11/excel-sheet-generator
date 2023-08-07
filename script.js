@@ -16,10 +16,14 @@ const generateTable = () => {
     if(rowsNumber>0 && columnsNumber>0){
         tableExists = true
     }
+    else{
+        swal("Error", "Please enter valid values for rows and columns.", "error");
+    }
 }
 
 const ExportToExcel = (type, fn, dl) => {
     if(!tableExists){
+        swal("Error", "There is no table you generated yet!", "error")
         return
     }
     var elt = table
